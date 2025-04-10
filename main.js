@@ -58,8 +58,8 @@ document.getElementById('button-confirms').addEventListener("click", function (c
     userData.kilometers = parseInt(document.getElementById('input-km').value);
     userData.age = document.getElementById('inputAge').value;
     // * VALORI TEXT - INSERITI DALL'UTENTE
-    userData.name = document.querySelector('.input-name').value;
-    userData.surname = document.querySelector('.input-surname').value;
+    userData.name = document.querySelector('.input-name').value.trim();
+    userData.surname = document.querySelector('.input-surname').value.trim();
 //! document.querySelector:  cerca e restituisce il primo elemento HTML che corrisponde 
 //!                          al selettore CSS specificato.
 //!                          Se non trova nessun elemento corrispondente, restituisce null
@@ -99,4 +99,15 @@ document.getElementById('button-confirms').addEventListener("click", function (c
         discountAmount.toFixed(2),
 
         console.log("Dati utente salvati:", userData);
+
+        // * aggiorno dati della card
+        document.getElementById('card-name').textContent = userData.name || "N/D";
+        document.getElementById('card-surname').textContent = userData.surname || "N/D";
+        document.getElementById('card-km').textContent = userData.kilometers ? `${userData.kilometers} km` : "N/D";
+        document.getElementById('card-price').textContent = `€${totalPrice.toFixed(2)}`;
+ 
+        // Rimuovi la classe d-none per mostrare la card
+        const cardContainer = document.getElementById('card-container');
+        cardContainer.classList.remove('d-none');
 });
+
