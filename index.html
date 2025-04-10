@@ -45,27 +45,30 @@
   <main>
     <!-- ! INPUT INGRESSO MULTIPLO NOME E COGNOME -->
     <div id="input-name-surname" class="input-group mb-3 mt-3">
-      <span class="input-group-text">Nome e Cognome</span>
-      <input type="text" aria-label="First name" class="form-control">
-      <input type="text" aria-label="Last name" class="form-control">
+      <span class="input-name-surname">Nome e Cognome</span>
+      <input class="input-name" type="text" aria-label="First name" class="form-control">
+      <input class="input-surname" type="text" aria-label="Last name" class="form-control">
     </div>
 
     <!-- ! INPUT KM DA PERCORRERE -->
-    <div id="input-km" class="input-group mb-3">
+    <div class="input-group mb-3">
       <span class="input-group-text" id="inputGroup-sizing-default">Chilometri da percorrere</span>
-      <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <input id="input-km" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
 
     <!-- ! INPUT SELEZIONE MENU TENDINA-->
     <div id="input-age" class="input-group mb-3">
-      <label class="input-group-text" for="inputGroupSelect01">Fascia di età</label>
-      <select class="form-select" id="inputGroupSelect01">
+      <label class="input-group-text" for="inputAge">Fascia di età</label>
+      <select class="form-select" id="inputAge">
         <option selected>Choose...</option>
-        <option value="minorenne">Minorenne</option>
-        <option value="maggiorenne">Maggiorenne</option>
-        <option value="over65">Over 65</option>
+        <option value="minorenne">Minorenne: fino a 17 anni</option>
+        <option value="maggiorenne">Maggiorenne: da 17 a 64 anni</option>
+        <option value="over65">Over 65: a partire dai 65 anni</option>
       </select>
     </div>
+
+    <button id="button-confirms" type="button">genera</button>
+    <button id="button-cancel" type="button">annulla</button>
 
   </main>
 
